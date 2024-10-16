@@ -1,5 +1,7 @@
 package com.assignment.sharedataproviderapp
 
+import android.content.ContentValues
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -34,12 +36,15 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import com.assignment.sharedataproviderapp.db.entities.PersonEntity
+import com.assignment.sharedataproviderapp.db.entities.fromContentValues
 import com.assignment.sharedataproviderapp.ui.theme.ShareDataProviderAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.lifecycle.HiltViewModel
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    var uri = Uri.parse("content://com.assignment.sharedataproviderapp.myProvider/person_entity")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {

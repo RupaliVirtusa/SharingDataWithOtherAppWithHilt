@@ -24,6 +24,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider
+            android:authorities="com.assignment.sharedataproviderapp.myProvider"
+            android:name=".PersonProvider"
+            android:exported="true"
+            android:enabled="true"/>
     </application>
 
 </manifest>

@@ -16,7 +16,7 @@ interface PersonDao {
     suspend fun insert(entity: PersonEntity): Long
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertFromContentProvider(entity: PersonEntity): Long
+    fun insertFromContentProvider(entity: PersonEntity): Long
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     fun updateFromContentProvider(person: PersonEntity): Int?
